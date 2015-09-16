@@ -8,8 +8,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
-@Table(name = "T_USER", schema = "SSH02")
+
 public class User implements java.io.Serializable {
 
     // Fields

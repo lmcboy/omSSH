@@ -30,6 +30,10 @@
     <package name="basePackage" extends="struts-default">
     	<action name="om-*" class="com.ssh.action.TestAction" method="{1}">
     	</action>
+    	<action name="custInfo-*" class="com.ssh.action.CustomersInfoAction" method="{1}">
+    		<result name="select_all">/select_cust.jsp</result>
+    		<result name="add_success">/new_cust.jsp</result>
+    	</action>
     </package>
 
 </struts>
