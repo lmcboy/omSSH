@@ -22,25 +22,4 @@ public class TestAction {
     @Autowired
     private IUserService userService;
 
-    /**
-     * http://localhost:8080/omSSH/om!test.action
-     * MethodName: test
-     * Description: 
-     * @author xudp
-     */
-    public void test(){
-        System.out.println("进入TestAction");
-        userService.test();
-    }
-    /**
-     * http://localhost:8080/omSSH/om!saveUser.action
-     */
-    public void saveUser(){
-        User user = new User();
-        user.setId(UUID.randomUUID().toString().replaceAll("-", ""));
-        user.setName("lmcboy999999孤傲苍狼");
-        user.setPwd("123456");
-        user.setCreatedatetime(new Date()); 
-        userService.save(user);
-    }
-}
+} 
