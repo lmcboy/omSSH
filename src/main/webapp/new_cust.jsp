@@ -48,6 +48,7 @@
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
+</script>
   </head>
   <body>
     <div id="base" class="">
@@ -534,7 +535,7 @@
     
     
     <!-- 新建Form -->
-    <form action="custInfo-addCust" method="post">
+    <form action="custInfo-addCust" method="post" name="addForm" onSubmit="return checkForm(this);">
       <!-- Unnamed (客户名称) -->
       <div id="u111" class="ax_text_field">
         <input id="u111_input" type="text" name="customerName"/>
@@ -560,9 +561,14 @@
         <input id="u225_input" type="text" value="GTW-NY" readonly="readonly"/>
       </div>
       <!-- Unnamed (HTML Button) -->
-      <div id="return_select" class="ax_html_button" class="return_select">
+      <div id="return_select" class="ax_html_button">
         <input id="u120_input" type="button" onclick="location='select_cust.jsp'" value="返回查询页面"/>
       </div>    
+      <div id="show_message" class="ax_html_button">
+      	<font color="red">
+      		${flag}
+      	</font>
+      </div>
       <!-- Address line 1 (地址栏1) -->
       <div id="u132" class="ax_text_field" data-label="Address line 1">
         <input id="u132_input" type="text" name="addressLine1"/>
@@ -656,7 +662,7 @@
       </div>
       <!-- Zip / postcode (邮编) -->
       <div id="u131" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u131_input" type="text" name="custInfo.postcode"/>
+        <input id="u131_input" type="text" name="postcode"/>
       </div>
       <!-- Zip / postcode (目的港) -->
       <div id="u151" class="ax_text_field" data-label="Zip / postcode">
@@ -668,7 +674,7 @@
       </div>
       <!-- Zip / postcode (有效) -->
       <div id="u163" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u163_input" type="text" name="status" value="待确认" readonly="readonly"/>
+        <input id="u163_input" type="text" name="custInfo.status" value="待确认" readonly="readonly"/>
       </div>
       <!-- Zip / postcode (失效日期) -->
       <div id="u154" class="ax_text_field" data-label="Zip / postcode">
@@ -749,7 +755,7 @@
         <img id="u112_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u113" class="text">
-          <p><span>主数据</span><span>维护</span><span>&gt;客户</span><span>管理</span><span>&gt;客户详细信息</span></p>
+          <p><span>主数据</span><span>维护</span><span>&gt;客户</span><span>管理</span><span>&gt;新建客户信息</span></p>
         </div>
       </div>
 
@@ -1226,11 +1232,13 @@
           <p><span>* </span><span>唛头</span></p>
         </div>
       </div>
-
       <!-- Zip / postcode (Text Field) [footnote] -->
       <div id="u228_ann" class="annotation"></div>
     </div>
     <script type="text/javascript">
+	    $(document).ready(function(){
+	    	$("#u204_input").val("103");
+	    });
     	$("#discount_name").on("change",function(){
     		var name = $(this).attr("value");
     		var temp = $("#u204_input");
@@ -1247,6 +1255,34 @@
     			temp.val("104");
     		}
     	});
+    	function checkForm(form){
+      		if(form.customerName.value.trim()==""){
+      			alert("请输入客户名称！");
+      			form.customerName.focus();
+      			return false;
+      		}
+      		if(form.customerCode.value.trim()==""){
+      			alert("请输入客户简称！");
+      			form.customerCode.focus();
+      			return false;
+      		}
+      		if(form.portOfDestination.value.trim()==""){
+      			alert("请输入目的港！");
+      			form.portOfDestination.focus();
+      			return false;
+      		}
+      		if(form.shippingMark.value.trim()==""){
+      			alert("请输入唛头！");
+      			form.shippingMark.focus();
+      			return false;
+      		}
+      		if(form.invoiceGroup.value.trim()==""){
+      			alert("请输入所属发票组！");
+      			form.invoiceGroup.focus();
+      			return false;
+      		}
+      		return true;
+          }
     </script>
   </body>
 </html>

@@ -33,6 +33,12 @@
     	<action name="custInfo-*" class="com.ssh.action.CustomersInfoAction" method="{1}">
     		<result name="select_all">/select_cust.jsp</result>
     		<result name="add_success">/new_cust.jsp</result>
+    		<result name="add_fail">/new_cust.jsp</result>
+    		<!-- AJAX配置 -->
+    		<result type="stream" name="operate_done">
+		        <param name="contentType">text/html</param>
+		        <param name="inputName">inputStream</param>
+		    </result>
     	</action>
     </package>
 

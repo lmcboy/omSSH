@@ -25,3 +25,11 @@
 	top: 1655px;
 	left: 1000px;
 }
+#show_message{
+	position: absolute;
+	top: 325px;
+	left: 360px;
+	width: 120px;
+	height: 40px;
+	blackground-color: yellow;
+}

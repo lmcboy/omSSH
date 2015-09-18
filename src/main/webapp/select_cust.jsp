@@ -44,6 +44,7 @@
     <script src="files/客户查询/data.js"></script>
     <script src="resources/scripts/axure/legacy.js"></script>
     <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="js/operate_cust.js"></script>
     <script type="text/javascript">
       $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
@@ -673,7 +674,7 @@
 	      		<td></td>
 	      		<td><input type="button" value="查 看"/></td>
 	      		<td><input type="button" value="编 辑"/></td>
-	      		<td><input type="button" value="确 认"/></td>
+	      		<td><input type="button" value="确 认" onclick="confirm_cust(this,${custId })"/></td>
 	      	</tr>
       	</s:iterator>
       </table>

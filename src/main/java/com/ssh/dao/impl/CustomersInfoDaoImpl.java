@@ -1,5 +1,6 @@
 package com.ssh.dao.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -42,15 +43,15 @@ public class CustomersInfoDaoImpl implements ICustomersInfoDao{
 		if(oci.getStatus() != null){
 			status = oci.getStatus();
 		}
-		String hql = "FROM OmCustomersInfo oci WHERE customerName LIKE ? OR customerCode LIKE ? OR status LIKE ?";
+		String hql = "FROM OmCustomersInfo oci WHERE customerName LIKE ? AND customerCode LIKE ? AND status LIKE ?";
 		Query query = sessionFactory.openSession().createQuery(hql);
 		//设置参数
-		if(custName != null && !status.trim().equals("")){
+		if(custName != null){
 			query.setString(0, "%" + custName + "%");			
 		}else{
 			query.setString(0, "%");
 		}
-		if(custCode != null && !status.trim().equals("")){
+		if(custCode != null){
 			query.setString(1, "%" + custCode + "%");
 		}else{
 			query.setString(1, "%");
@@ -61,6 +62,30 @@ public class CustomersInfoDaoImpl implements ICustomersInfoDao{
 			query.setString(2, "%");
 		}
 		return query.list();
+	}
+	/**
+	 * 添加客户信息
+	 * @param OmCustomersInfo oci
+	 * return List<OmCustomersInfo>
+	 */
+	public Serializable saveCustomer(OmCustomersInfo oci) {
+		return getSession().save(oci);
+	}
+	/**
+	 * 修改客户信息状态
+	 * @param Integer custId
+	 * return boolean
+	 */
+	public boolean updateCustStatus(Integer custId) {
+		try{
+			OmCustomersInfo custInfo = (OmCustomersInfo) getSession().get(OmCustomersInfo.class, custId);
+			custInfo.setStatus("有效");//将客户信息设置为有效
+			getSession().saveOrUpdate(custInfo);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 	
 }
