@@ -24,6 +24,14 @@ public class CustomersInfoServiceImpl implements ICustomersInfoService {
 		return customersInfoDao.getCustomersInfo(oci);
 	}
 	/**
+	 * 根据客户Id获取客户详细信息
+	 * @param Integer custId
+	 * return OmCustomersInfo
+	 */
+	public OmCustomersInfo getCustomerInfoById(Integer custId){
+		return customersInfoDao.getCustomerInfoById(custId);
+	}
+	/**
 	 * 添加客户信息
 	 * @param OmCustomersInfo oci
 	 * return
@@ -38,5 +46,21 @@ public class CustomersInfoServiceImpl implements ICustomersInfoService {
 	 */
 	public boolean updateCustStatus(Integer custId) {
 		return customersInfoDao.updateCustStatus(custId);
+	}
+	/**
+	 * 修改客户地址信息
+	 * @param OmCustomersInfo oci
+	 * return boolean
+	 */
+	public boolean updateCustAddress(OmCustomersInfo oci){
+		return customersInfoDao.updateCustAddress(oci);
+	}
+	/**
+	 * 修改客户付款信息
+	 * @param OmCustomersInfo oci
+	 * return boolean
+	 */
+	public boolean updateCustPay(OmCustomersInfo oci){
+		return customersInfoDao.updateCustPay(oci);
 	}
 }

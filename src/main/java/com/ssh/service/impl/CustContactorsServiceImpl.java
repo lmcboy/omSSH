@@ -22,5 +22,20 @@ public class CustContactorsServiceImpl implements ICustContactorsService {
 	public Serializable saveContactors(OmCustContactors occ) {
 		return custContactorsDao.saveContactors(occ);
 	}
-
+	/**
+	 * 根据客户Id获取客户联系人信息
+	 * @param Integer custId
+	 * return OmCustContactors
+	 */
+	public OmCustContactors getCustomerContactorsById(Integer custId){
+		return custContactorsDao.getCustomerContactorsById(custId);
+	}
+	/**
+	 * 更新客户联系人信息
+	 * @param OmCustContactors
+	 * return boolean
+	 */
+	public boolean updateCustContactors(OmCustContactors occ){
+		return custContactorsDao.updateCustContactors(occ);
+	}
 }

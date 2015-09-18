@@ -11,7 +11,6 @@
     <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="data/styles.css" type="text/css" rel="stylesheet"/>
     <link href="files/custManage/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="css/mine.css" type="text/css" rel="stylesheet" />
     <script src="resources/scripts/jquery-1.7.1.min.js"></script>
     <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
     <script src="resources/scripts/axure/axQuery.js"></script>
@@ -43,14 +42,14 @@
     <script src="files/custManage/data.js"></script>
     <script src="resources/scripts/axure/legacy.js"></script>
     <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="js/update_cust.js"></script>
     <script type="text/javascript">
       $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
-</script>
   </head>
-  <body>
+  <body onload="select();">
     <div id="base" class="">
 
       <!-- Unnamed (Shape) -->
@@ -534,9 +533,10 @@
       </div>
     
     
+    <!-- 客户基本信息Form -->
       <!-- Unnamed (客户名称) -->
       <div id="u111" class="ax_text_field">
-        <input id="u111_input" type="text" name="customerName" readonly="readonly" value="${customer.customerName }" />
+        <input id="u111_input" type="text" name="customerName" readonly="readonly" value="${customer.customerName }"/>
       </div>
       <!-- Unnamed (类型) -->
       <div id="u119" class="ax_text_field">
@@ -546,7 +546,7 @@
       <div id="u123" class="ax_text_field">
         <input id="u123_input" type="text" name="customerCode" readonly="readonly" value="${customer.customerCode }"/>
       </div>
-      <!-- Unnamed (类型) -->
+      <!-- Unnamed (状态) -->
       <div id="u127" class="ax_text_field">
         <input id="u127_input" type="text" name="status" readonly="readonly" value="${customer.status }"/>
       </div>
@@ -559,16 +559,20 @@
         <input id="u225_input" type="text" value="GTW-NY" readonly="readonly"/>
       </div>
       <!-- Unnamed (HTML Button) -->
-      <div id="return_select" class="ax_html_button">
+      <div id="u120" class="ax_html_button">
         <input id="u120_input" type="button" onclick="location='select_cust.jsp'" value="返回查询页面"/>
-      </div>    
-      <!-- Address line 1 (地址栏1) -->
+      </div> 
+    <!-- 修改客户地址信息Form -->
+    <form id="addressForm" >
+    	<div><input type="hidden" name="custId" value="${customer.custId }"/></div>
+        
+    	<!-- Address line 1 (地址栏1) -->
       <div id="u132" class="ax_text_field" data-label="Address line 1">
-        <input id="u132_input" type="text" name="addressLine1" readonly="readonly" value="${customer.addressLine1 }"/>
+        <input id="u132_input" type="text" name="addressLine1" value="${customer.addressLine1 }"/>
       </div>
       <!-- Address line 2 (地址栏2) -->
       <div id="u133" class="ax_text_field" data-label="Address line 2">
-        <input id="u133_input" type="text" name="addressLine2" readonly="readonly" value="${customer.addressLine2 }"/>
+        <input id="u133_input" type="text" name="addressLine2" value="${customer.addressLine2 }"/>
       </div>
       <!-- City / town (城市) -->
       <div id="u134" class="ax_text_field" data-label="City / town">
@@ -580,19 +584,90 @@
       </div>
       <!-- Country (国家) -->
       <div id="u136" class="ax_droplist" data-label="Country">
-       	<input id="u135_input" type="text" readonly="readonly"/>
+        <select id="u136_input">
+          <option value="Please choose">Please choose</option>
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Bahrain">Bahrain</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Chile">Chile</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Croatia">Croatia</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Czech Republic">Czech Republic</option>
+          <option value="Denmark">Denmark</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Egypt">Egypt</option>
+          <option value="El Salvador">El Salvador</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Faroe Islands">Faroe Islands</option>
+          <option value="Fiji">Fiji</option>
+          <option value="Finland">Finland</option>
+          <option value="FYROM">FYROM</option>
+          <option value="Germany">Germany</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Greece">Greece</option>
+          <option value="Guatemala">Guatemala</option>
+          <option value="Guernsey">Guernsey</option>
+          <option value="Honduras">Honduras</option>
+          <option value="Hong Kong">Hong Kong</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Iceland">Iceland</option>
+          <option value="India">India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Ireland">Ireland</option>
+          <option value="Italy">Italy</option>
+          <option value="Jamaica">Jamaica</option>
+          <option value="Jersey">Jersey</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Kuwait">Kuwait</option>
+          <option value="Latvia">Latvia</option>
+          <option value="Lithuania">Lithuania</option>
+          <option value="France">France</option>
+          <option value="Luxembourg">Luxembourg</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Malta">Malta</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Nicaragua">Nicaragua</option>
+          <option value="Norway">Norway</option>
+          <option value="Paraguay">Paraguay</option>
+          <option value="Peru">Peru</option>
+          <option value="Poland">Poland</option>
+          <option value="Portugal">Portugal</option>
+          <option value="Romania">Romania</option>
+          <option value="Serbia">Serbia</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Slovenia">Slovenia</option>
+          <option value="South Africa">South Africa</option>
+          <option value="Spain">Spain</option>
+          <option value="Sri Lanka">Sri Lanka</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Turkey">Turkey</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Uruguay">Uruguay</option>
+          <option selected value="USA">USA</option>
+        </select>
       </div>
       <!-- Zip / postcode (邮编) -->
       <div id="u131" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u131_input" type="text" name="postcode" readonly="readonly" value="${customer.postcode }"/>
+        <input id="u131_input" type="text" name="postcode" value="${customer.postcode }"/>
       </div>
       <!-- Zip / postcode (目的港) -->
       <div id="u151" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u151_input" type="text" name="portOfDestination" readonly="readonly" value="${customer.portOfDestination }"/>
+        <input id="u151_input" type="text" name="portOfDestination" value="${customer.portOfDestination }"/>
       </div>
       <!-- Zip / postcode (唛头) -->
       <div id="u228" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u228_input" type="text" name="shippingMark" readonly="readonly" value="${customer.shippingMark }"/>
+        <input id="u228_input" type="text" name="shippingMark" value="${customer.shippingMark }"/>
       </div>
       <!-- Zip / postcode (有效) -->
       <div id="u163" class="ax_text_field" data-label="Zip / postcode">
@@ -600,11 +675,19 @@
       </div>
       <!-- Zip / postcode (失效日期) -->
       <div id="u154" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u154_input" type="text" readonly="readonly"/>
+        <input id="u154_input" type="text" value="XXXX-XX-XX" readonly="readonly"/>
       </div>
-      <!-- Zip / postcode (所属发票组) -->
+      <!-- Unnamed (地址信息保存) -->
+      <div id="u157" class="ax_html_button">
+        <input id="u157_input" type="button" onclick="update_address(this)" value="地址信息保存"/>
+      </div>        
+    </form>
+    <!-- 修改客户付款信息Form -->
+    <form id="payForm">
+    	<div><input type="hidden" name="custId" value="${customer.custId }"/></div>
+    	<!-- Zip / postcode (所属发票组) -->
       <div id="u169" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u169_input" type="text" name="invoiceGroup" readonly="readonly" value="${customer.invoiceGroup }"/>
+        <input id="u169_input" type="text" name="invoiceGroup" value="${customer.invoiceGroup }"/>
       </div>
       <!-- Zip / postcode (通用加价条款) -->
       <div id="u204" class="ax_text_field" data-label="Zip / postcode">
@@ -612,49 +695,77 @@
       </div>
       <!-- Zip / postcode (结算货币) -->
       <div id="u166" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u166_input" type="text" value="USD" readonly="readonly" />
+        <input id="u166_input" type="text" value="USD" readonly="readonly"/>
       </div>
       <!-- Zip / postcode (一般折扣) -->
+      <div><input type="hidden" value="${customer.markupName }" id="hide_text"></div>
       <div id="u201" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u201_input" type="text" readonly="readonly" name="markupName" value="${customer.markupName }"/>
+        <select id="discount_name" name="markupName" value="${customer.markupName }">
+          <option value="无折扣">无折扣</option>
+          <option value="3%折扣">3%折扣</option>
+          <option value="低于50片加价5%">低于50片加价5%</option>
+          <option value="5%折扣">5%折扣</option>
+        </select>
       </div>
       <!-- Zip / postcode (付款条件) -->
       <div id="u172" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u201_input" type="text" readonly="readonly" name="paymentTerm" value="${customer.paymentTerm }"/>
+        <select id="u172_input" name="paymentTerm" value="${customer.paymentTerm }">
+          <option value="立即付款">立即付款</option>
+          <option value="15天后付款">15天后付款</option>
+          <option value="30天后付款">30天后付款</option>
+          <option value="60天后付款">60天后付款</option>
+        </select>
       </div>
       <!-- Zip / postcode (价格条款1) -->
       <div id="u175" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u175_input" type="text" name="priceTerm1" readonly="readonly"  value="${customer.priceTerm1 }"/>
+        <input id="u175_input" type="text" name="priceTerm1" value="${customer.priceTerm1 }"/>
       </div>
       <!-- Zip / postcode (价格条款2) -->
       <div id="u176" class="ax_text_field" data-label="Zip / postcode">
-        <input id="u176_input" type="text" name="priceTerm2" readonly="readonly"  value="${customer.priceTerm2 }"/>
+        <input id="u176_input" type="text" name="priceTerm2" value="${customer.priceTerm2 }"/>
       </div>
       <!-- Zip / postcode (价格条款3) -->
       <div id="u179" class="ax_text_field" data-label="Zip / postcode">
         <input id="u179_input" type="text" value="输入文本" readonly="readonly"/>
       </div>
-      <!-- Address line 1 (发件人邮箱) -->
+      <!-- Unnamed (付款信息保存) -->
+      <div id="u129" class="ax_html_button">
+        <input id="u129_input" type="button" onclick="update_pay(this)" value="付款信息保存"/>
+      </div> 
+      
+    </form>
+    <!-- 修改联系人信息Form -->
+    <form id="contactorsForm">
+      <div><input type="hidden" name="custId" value="${customer.custId }"/></div>
+    	<!-- Address line 1 (发件人邮箱) -->
       <div id="u210" class="ax_text_field" data-label="Address line 1">
-        <input id="u210_input" type="text" name="mailFrom" readonly="readonly"  value="${contactor.mailFrom }"/>
+        <input id="u210_input" type="text" name="mailFrom" value="${contactor.mailFrom }"/>
       </div>
       <!-- Address line 1 (Pre PO收件人) -->
       <div id="u207" class="ax_text_field" data-label="Address line 1">
-        <input id="u207_input" type="text" name="prePoMailto" readonly="readonly" value="${contactor.prePoMailto }"/>
+        <input id="u207_input" type="text" name="prePoMailto" value="${contactor.prePoMailto }"/>
       </div>
       <!-- Address line 1 (PO收件人) -->
       <div id="u213" class="ax_text_field" data-label="Address line 1">
-        <input id="u213_input" type="text" name="poMailto" readonly="readonly" value="${contactor.poMailto }"/>
+        <input id="u213_input" type="text" name="poMailto" value="${contactor.poMailto }"/>
       </div>
       <!-- Address line 1 (OC/P收件人) -->
       <div id="u216" class="ax_text_field" data-label="Address line 1">
-        <input id="u216_input" type="text" name="ocPiMailto" readonly="readonly" value="${contactor.ocPiMailto }"/>
+        <input id="u216_input" type="text" name="ocPiMailto" value="${contactor.ocPiMailto }"/>
       </div>
        <!-- Address line 1 (INV/Packing list 收件人) -->
       <div id="u219" class="ax_text_field" data-label="Address line 1">
-        <input id="u219_input" type="text" name="invPklistMailto" readonly="readonly" value="${contactor.invPklistMailto }"/>
+        <input id="u219_input" type="text" name="invPklistMailto" value="${contactor.invPklistMailto }"/>
       </div> 
-    
+      <!-- Unnamed (客户联系人信息保存) -->
+      <div id="u196" class="ax_html_button">
+        <input id="u196_input" type="button" onclick="update_contactors(this)" value="联系人信息保存"/>
+      </div>
+    </form>
+    	<!-- Unnamed (客户组织信息保存) -->
+      <div id="u183" class="ax_html_button">
+        <input id="u183_input" type="submit" value="组织信息保存" disabled="disabled"/>
+      </div>
        <!-- Zip / postcode (Text Field) [footnote] -->
       <div id="u131_ann" class="annotation"></div>
       <!-- Unnamed (Shape) -->
@@ -662,7 +773,7 @@
         <img id="u112_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u113" class="text">
-          <p><span>主数据</span><span>维护</span><span>&gt;客户</span><span>管理</span><span>&gt;查看客户详细信息</span></p>
+          <p><span>主数据</span><span>维护</span><span>&gt;客户</span><span>管理</span><span>&gt;修改客户信息</span></p>
         </div>
       </div>
 
@@ -716,7 +827,15 @@
         <div id="u126" class="text">
           <p><span>状态</span></p>
         </div>
-      </div>     
+      </div>
+
+      <!-- Unnamed (HTML Button) -->
+      <div id="u128" class="ax_html_button">
+        <input id="u128_input" type="button" onclick="location='new_cust.jsp'" value="新建"/>
+      </div>
+
+      
+
       <!-- Unnamed (Horizontal Line) -->
       <div id="u130" class="ax_horizontal_line">
         <img id="u130_start" class="img " src="resources/images/transparent.gif" alt="u130_start"/>
@@ -1020,6 +1139,8 @@
         <img id="u195_end" class="img " src="resources/images/transparent.gif" alt="u195_end"/>
         <img id="u195_line" class="img " src="images/dingdandaoru/u136_line.png" alt="u195_line"/>
       </div>
+
+
       <!-- Unnamed (Shape) -->
       <div id="u197" class="ax_paragraph">
         <img id="u197_img" class="img " src="resources/images/transparent.gif"/>
@@ -1048,7 +1169,9 @@
         <div id="u203" class="text">
           <p><span>* </span><span>通用</span><span>加价</span><span>条款</span></p>
         </div>
-      </div>     
+      </div>
+
+      
 
       <!-- Zip / postcode (Text Field) [footnote] -->
       <div id="u204_ann" class="annotation"></div>
@@ -1060,7 +1183,9 @@
         <div id="u206" class="text">
           <p><span>Pre</span><span> PO</span><span>&nbsp;</span><span>收件人</span></p>
         </div>
-      </div>      
+      </div>
+
+      
 
       <!-- Address line 1 (Text Field) [footnote] -->
       <div id="u207_ann" class="annotation"></div>
@@ -1072,7 +1197,9 @@
         <div id="u209" class="text">
           <p><span>发件</span><span>人</span><span>邮箱</span></p>
         </div>
-      </div>      
+      </div>
+
+      
 
       <!-- Address line 1 (Text Field) [footnote] -->
       <div id="u210_ann" class="annotation"></div>
@@ -1084,7 +1211,9 @@
         <div id="u212" class="text">
           <p><span>PO </span><span>收件人</span></p>
         </div>
-      </div>     
+      </div>
+
+      
 
       <!-- Address line 1 (Text Field) [footnote] -->
       <div id="u213_ann" class="annotation"></div>
@@ -1096,7 +1225,9 @@
         <div id="u215" class="text">
           <p><span>OC/PI收件人</span></p>
         </div>
-      </div>     
+      </div>
+
+      
 
       <!-- Address line 1 (Text Field) [footnote] -->
       <div id="u216_ann" class="annotation"></div>
@@ -1108,7 +1239,9 @@
         <div id="u218" class="text">
           <p><span>INV/Packing</span><span> list</span><span>&nbsp;</span><span>收件人</span></p>
         </div>
-      </div>     
+      </div>
+
+     
 
       <!-- Address line 1 (Text Field) [footnote] -->
       <div id="u219_ann" class="annotation"></div>
@@ -1120,7 +1253,9 @@
         <div id="u221" class="text">
           <p><span>集团公司</span></p>
         </div>
-      </div>      
+      </div>
+
+      
 
       <!-- Unnamed (Shape) -->
       <div id="u223" class="ax_paragraph">
@@ -1131,6 +1266,8 @@
         </div>
       </div>
 
+      
+
       <!-- Unnamed (Shape) -->
       <div id="u226" class="ax_paragraph">
         <img id="u226_img" class="img " src="resources/images/transparent.gif"/>
@@ -1139,8 +1276,46 @@
           <p><span>* </span><span>唛头</span></p>
         </div>
       </div>
+
+      
+
       <!-- Zip / postcode (Text Field) [footnote] -->
       <div id="u228_ann" class="annotation"></div>
     </div>
+    <script type="text/javascript">
+    	$("#discount_name").on("change",function(){
+    		var name = $(this).attr("value");
+    		var temp = $("#u204_input");
+    		if(name == "无折扣"){
+    			temp.val("101");
+    		}
+    		if(name == "3%折扣"){
+    			temp.val("102");
+    		}
+    		if(name == "低于50片加价5%"){
+    			temp.val("103");
+    		}
+    		if(name == "5%折扣"){
+    			temp.val("104");
+    		}
+    	});
+    	
+    	function select(){
+    		var sel = $("#discount_name");
+    		var v = $(hide_text).attr("value");
+    		if(v == '无折扣'){
+    			sel.find("option").eq(0).attr("selected","selected");
+    		}
+    		if(v == '3%折扣'){
+    			sel.find("option").eq(1).attr("selected","selected");
+    		}
+    		if(v == '低于50片加价5%'){
+    			sel.find("option").eq(2).attr("selected","selected");
+    		}
+    		if(v == '5%折扣'){
+    			sel.find("option").eq(3).attr("selected","selected");
+    		}
+    	}
+    </script>
   </body>
 </html>

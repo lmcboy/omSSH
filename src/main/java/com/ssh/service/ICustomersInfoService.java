@@ -13,6 +13,12 @@ public interface ICustomersInfoService {
 	 */
 	public List<OmCustomersInfo> getCustomersInfo(OmCustomersInfo oci);
 	/**
+	 * 根据客户Id获取客户详细信息
+	 * @param Integer custId
+	 * return OmCustomersInfo
+	 */
+	public OmCustomersInfo getCustomerInfoById(Integer custId);
+	/**
 	 * 添加客户信息
 	 * @param OmCustomersInfo oci
 	 * return
@@ -24,4 +30,16 @@ public interface ICustomersInfoService {
 	 * return boolean
 	 */
 	boolean updateCustStatus(Integer custId);
+	/**
+	 * 修改客户地址信息
+	 * @param OmCustomersInfo oci
+	 * return boolean
+	 */
+	boolean updateCustAddress(OmCustomersInfo oci);
+	/**
+	 * 修改客户付款信息
+	 * @param OmCustomersInfo oci
+	 * return boolean
+	 */
+	boolean updateCustPay(OmCustomersInfo oci);
 }

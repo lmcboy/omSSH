@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ssh.dao.ICustomersInfoDao;
+import com.ssh.model.OmCustContactors;
 import com.ssh.model.OmCustomersInfo;
 
 @Repository("customersInfoDao")
@@ -64,6 +65,17 @@ public class CustomersInfoDaoImpl implements ICustomersInfoDao{
 		return query.list();
 	}
 	/**
+	 * 根据客户Id获取客户详细信息
+	 * @param Integer custId
+	 * return OmCustomersInfo
+	 */
+	public OmCustomersInfo getCustomerInfoById(Integer custId){
+		Session session = sessionFactory.openSession();
+		OmCustomersInfo oci = (OmCustomersInfo) session.get(OmCustomersInfo.class, custId);
+		session.close();
+		return oci;
+	}
+	/**
 	 * 添加客户信息
 	 * @param OmCustomersInfo oci
 	 * return List<OmCustomersInfo>
@@ -87,5 +99,45 @@ public class CustomersInfoDaoImpl implements ICustomersInfoDao{
 		}
 		return true;
 	}
-	
+	/**
+	 * 修改客户地址信息
+	 * @param OmCustomersInfo oci
+	 * return boolean
+	 */
+	public boolean updateCustAddress(OmCustomersInfo oci){
+		try{
+			OmCustomersInfo custInfo = (OmCustomersInfo) getSession().get(OmCustomersInfo.class, oci.getCustId());
+			custInfo.setAddressLine1(oci.getAddressLine1());
+			custInfo.setAddressLine2(oci.getAddressLine2());
+			custInfo.setPostcode(oci.getPostcode());
+			custInfo.setPortOfDestination(oci.getPortOfDestination());
+			custInfo.setShippingMark(oci.getShippingMark());
+			getSession().saveOrUpdate(custInfo);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	/**
+	 * 修改客户付款信息
+	 * @param OmCustomersInfo oci
+	 * return boolean
+	 */
+	public boolean updateCustPay(OmCustomersInfo oci){
+		try{
+			OmCustomersInfo custInfo = (OmCustomersInfo) getSession().get(OmCustomersInfo.class, oci.getCustId());
+			custInfo.setInvoiceGroup(oci.getInvoiceGroup());
+			custInfo.setOmCustDiscount(oci.getOmCustDiscount());
+			custInfo.setMarkupName(oci.getMarkupName());
+			custInfo.setPaymentTerm(oci.getPaymentTerm());
+			custInfo.setPriceTerm1(oci.getPriceTerm1());
+			custInfo.setPriceTerm2(oci.getPriceTerm2());
+			getSession().saveOrUpdate(custInfo);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return false;
+		}
+		return true;
+	}
 }

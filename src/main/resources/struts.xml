@@ -39,6 +39,13 @@
 		        <param name="contentType">text/html</param>
 		        <param name="inputName">inputStream</param>
 		    </result>
+		    <result name="update_cust">/update_cust.jsp</result>
+		    <result name="look_cust">/look_cust.jsp</result>
+		    <!-- AJAX配置 -->
+    		<result type="stream" name="update_done">
+		        <param name="contentType">text/html</param>
+		        <param name="inputName">inputStream</param>
+		    </result>
     	</action>
     </package>
 

@@ -10,7 +10,7 @@
     <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="data/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="files/客户管理/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/custManage/styles.css" type="text/css" rel="stylesheet"/>
     <link href="css/mine.css" type="text/css" rel="stylesheet" />
     <script src="resources/scripts/jquery-1.7.1.min.js"></script>
     <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
@@ -40,7 +40,7 @@
     <script src="resources/scripts/axure/adaptive.js"></script>
     <script src="resources/scripts/axure/tree.js"></script>
     <script src="resources/scripts/axure/init.temp.js"></script>
-    <script src="files/客户管理/data.js"></script>
+    <script src="files/custManage/data.js"></script>
     <script src="resources/scripts/axure/legacy.js"></script>
     <script src="resources/scripts/axure/viewer.js"></script>
     <script type="text/javascript">
@@ -64,7 +64,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u2" class="ax_image">
-        <img id="u2_img" class="img " src="images/登录/u2.png"/>
+        <img id="u2_img" class="img " src="images/login/u2.png"/>
         <!-- Unnamed () -->
         <div id="u3" class="text">
           <p><span></span></p>
@@ -75,7 +75,7 @@
       <div id="u4" class="ax_horizontal_line">
         <img id="u4_start" class="img " src="resources/images/transparent.gif" alt="u4_start"/>
         <img id="u4_end" class="img " src="resources/images/transparent.gif" alt="u4_end"/>
-        <img id="u4_line" class="img " src="images/登录/u4_line.png" alt="u4_line"/>
+        <img id="u4_line" class="img " src="images/login/u4_line.png" alt="u4_line"/>
       </div>
 
       <!-- Unnamed (Tree) -->
@@ -99,7 +99,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u10" class="ax_image">
-              <img id="u10_img" class="img " src="images/登录/u10.png"/>
+              <img id="u10_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u11" class="text">
                 <p><span></span></p>
@@ -158,7 +158,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u24" class="ax_image">
-              <img id="u24_img" class="img " src="images/登录/u10.png"/>
+              <img id="u24_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u25" class="text">
                 <p><span></span></p>
@@ -205,7 +205,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u35" class="ax_image">
-              <img id="u35_img" class="img " src="images/登录/u10.png"/>
+              <img id="u35_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u36" class="text">
                 <p><span></span></p>
@@ -240,7 +240,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u43" class="ax_image">
-              <img id="u43_img" class="img " src="images/登录/u10.png"/>
+              <img id="u43_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u44" class="text">
                 <p><span></span></p>
@@ -260,7 +260,7 @@
               <div id="u47" class="ax_tree_node treenode">
                 <!-- Unnamed (Shape) -->
                 <div id="u48" class="" selectiongroup="u5_tree_group">
-                  <img id="u48_img" class="img " src="images/首页/u48.png"/>
+                  <img id="u48_img" class="img " src="images/index/u48.png"/>
                   <!-- Unnamed () -->
                   <div id="u49" class="text">
                     <p><span>orderbase</span><span>查询</span></p>
@@ -299,7 +299,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u57" class="ax_image">
-              <img id="u57_img" class="img " src="images/登录/u10.png"/>
+              <img id="u57_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u58" class="text">
                 <p><span></span></p>
@@ -319,9 +319,9 @@
               <div id="u61" class="ax_tree_node treenode">
                 <!-- Unnamed (Shape) -->
                 <div id="u62" class="" selectiongroup="u5_tree_group">
-                  <img id="u62_img" class="img " src="images/客户管理/u62.png"/>
+                  <img id="u62_img" class="img " src="images/custManage/u62.png"/>
                   <!-- Unnamed () -->
-                  <div id="u63" class="text">
+                  <div id="u63" class="text" onclick="location='select_cust.jsp'">
                     <p><span>客户维护</span></p>
                   </div>
                 </div>
@@ -331,7 +331,7 @@
               <div id="u64" class="ax_tree_node treenode">
                 <!-- Unnamed (Shape) -->
                 <div id="u65" class="" selectiongroup="u5_tree_group">
-                  <img id="u65_img" class="img " src="images/客户管理/u65.png"/>
+                  <img id="u65_img" class="img " src="images/custManage/u65.png"/>
                   <!-- Unnamed () -->
                   <div id="u66" class="text">
                     <p><span>价格表管理</span></p>
@@ -346,7 +346,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u68" class="ax_image">
-              <img id="u68_img" class="img " src="images/登录/u10.png"/>
+              <img id="u68_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u69" class="text">
                 <p><span></span></p>
@@ -405,7 +405,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u82" class="ax_image">
-              <img id="u82_img" class="img " src="images/登录/u10.png"/>
+              <img id="u82_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u83" class="text">
                 <p><span></span></p>
@@ -452,7 +452,7 @@
 
             <!-- Unnamed (Image) -->
             <div id="u93" class="ax_image">
-              <img id="u93_img" class="img " src="images/登录/u10.png"/>
+              <img id="u93_img" class="img " src="images/login/u10.png"/>
               <!-- Unnamed () -->
               <div id="u94" class="text">
                 <p><span></span></p>
@@ -763,7 +763,7 @@
       <div id="u114" class="ax_horizontal_line">
         <img id="u114_start" class="img " src="resources/images/transparent.gif" alt="u114_start"/>
         <img id="u114_end" class="img " src="resources/images/transparent.gif" alt="u114_end"/>
-        <img id="u114_line" class="img " src="images/客户管理/u114_line.png" alt="u114_line"/>
+        <img id="u114_line" class="img " src="images/custManage/u114_line.png" alt="u114_line"/>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -799,7 +799,7 @@
       <div id="u124" class="ax_vertical_line">
         <img id="u124_start" class="img " src="resources/images/transparent.gif" alt="u124_start"/>
         <img id="u124_end" class="img " src="resources/images/transparent.gif" alt="u124_end"/>
-        <img id="u124_line" class="img " src="images/登录/u105_line.png" alt="u124_line"/>
+        <img id="u124_line" class="img " src="images/login/u105_line.png" alt="u124_line"/>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -814,7 +814,7 @@
       <div id="u130" class="ax_horizontal_line">
         <img id="u130_start" class="img " src="resources/images/transparent.gif" alt="u130_start"/>
         <img id="u130_end" class="img " src="resources/images/transparent.gif" alt="u130_end"/>
-        <img id="u130_line" class="img " src="images/订单导入/u136_line.png" alt="u130_line"/>
+        <img id="u130_line" class="img " src="images/dingdandaoru/u136_line.png" alt="u130_line"/>
       </div>
 
       <!-- Address line 1 (Text Field) [footnote] -->
@@ -928,7 +928,7 @@
       <div id="u158" class="ax_horizontal_line">
         <img id="u158_start" class="img " src="resources/images/transparent.gif" alt="u158_start"/>
         <img id="u158_end" class="img " src="resources/images/transparent.gif" alt="u158_end"/>
-        <img id="u158_line" class="img " src="images/订单导入/u136_line.png" alt="u158_line"/>
+        <img id="u158_line" class="img " src="images/dingdandaoru/u136_line.png" alt="u158_line"/>
       </div>
       
       <!-- Unnamed (Shape) -->
@@ -1042,7 +1042,7 @@
       <div id="u182" class="ax_horizontal_line">
         <img id="u182_start" class="img " src="resources/images/transparent.gif" alt="u182_start"/>
         <img id="u182_end" class="img " src="resources/images/transparent.gif" alt="u182_end"/>
-        <img id="u182_line" class="img " src="images/订单导入/u136_line.png" alt="u182_line"/>
+        <img id="u182_line" class="img " src="images/dingdandaoru/u136_line.png" alt="u182_line"/>
       </div>
 
       
@@ -1111,7 +1111,7 @@
       <div id="u195" class="ax_horizontal_line">
         <img id="u195_start" class="img " src="resources/images/transparent.gif" alt="u195_start"/>
         <img id="u195_end" class="img " src="resources/images/transparent.gif" alt="u195_end"/>
-        <img id="u195_line" class="img " src="images/订单导入/u136_line.png" alt="u195_line"/>
+        <img id="u195_line" class="img " src="images/dingdandaoru/u136_line.png" alt="u195_line"/>
       </div>
       <!-- Unnamed (Shape) -->
       <div id="u197" class="ax_paragraph">

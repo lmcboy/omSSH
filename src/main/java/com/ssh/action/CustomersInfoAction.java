@@ -1,16 +1,22 @@
 package com.ssh.action;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.interceptor.RequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.gson.JsonObject;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssh.model.OmCustContactors;
 import com.ssh.model.OmCustDiscount;
@@ -129,6 +135,110 @@ public class CustomersInfoAction extends ActionSupport implements RequestAware{
 		}
 		System.out.println("====== Action: operateCust() Done ======");
 		return "operate_done";
+	}
+	/**
+     * http://localhost:8080/omSSH/custInfo-updateCust
+     * MethodName: updateCust
+     * Description: 根据客户ID获取客户详细信息
+     * @author mclin
+     */
+	public String updateCust(){
+		System.out.println("====== Action: updateCust()... ======");
+		OmCustomersInfo omCustomersInfo = customersInfoService.getCustomerInfoById(custId);
+		request.put("customer", omCustomersInfo);
+		OmCustContactors omCustContactors = custContactorsService.getCustomerContactorsById(custId);
+		System.out.println("+++++"+omCustContactors);
+		request.put("contactor", omCustContactors);
+		System.out.println("====== Action: updateCust() Done ======");
+		return "update_cust";
+	}
+	/**
+     * http://localhost:8080/omSSH/custInfo-lookCust
+     * MethodName: lookCust
+     * Description: 根据客户ID获取客户详细信息
+     * @author mclin
+     */
+	public String lookCust(){
+		System.out.println("====== Action: lookCust()... ======");
+		OmCustomersInfo omCustomersInfo = customersInfoService.getCustomerInfoById(custId);
+		request.put("customer", omCustomersInfo);
+		OmCustContactors omCustContactors = custContactorsService.getCustomerContactorsById(custId);
+		request.put("contactor", omCustContactors);
+		System.out.println("====== Action: lookCust() Done ======");
+		return "look_cust";
+	}
+	/**
+     * http://localhost:8080/omSSH/custInfo-updateCustAddress
+     * MethodName: updateCustAddress
+     * Description: 更新客户地址信息
+     * @author mclin
+	 * @throws UnsupportedEncodingException 
+     */
+	public String updateCustAddress() throws UnsupportedEncodingException{
+		System.out.println("====== Action: updateCustAddress()... ======");
+		OmCustomersInfo oci = new OmCustomersInfo();
+		oci.setCustId(custId);oci.setAddressLine1(addressLine1);
+		oci.setAddressLine2(addressLine2);oci.setPostcode(postcode);
+		oci.setPortOfDestination(portOfDestination);oci.setShippingMark(shippingMark);
+		boolean FLAG = customersInfoService.updateCustAddress(oci);
+		if(FLAG){
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		}else{
+			inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
+		}
+		System.out.println("====== Action: updateCustAddress() Done ======");
+		return "update_done";
+	}
+	/**
+     * http://localhost:8080/omSSH/custInfo-updateCustPay
+     * MethodName: updateCustPay
+     * Description: 更新客户付款信息
+     * @author mclin
+	 * @throws UnsupportedEncodingException 
+     */
+	public String updateCustPay() throws UnsupportedEncodingException{
+		System.out.println("====== Action: updateCustPay()... ======");
+		OmCustomersInfo oci = new OmCustomersInfo();
+		oci.setCustId(custId);oci.setInvoiceGroup(invoiceGroup);
+		oci.setMarkupName(markupName);oci.setPaymentTerm(paymentTerm);
+		oci.setPriceTerm1(priceTerm1);oci.setPriceTerm2(priceTerm2);
+		OmCustDiscount ocd = new OmCustDiscount();
+		ocd.setDiscountId(discountId);oci.setOmCustDiscount(ocd);
+		boolean FLAG = customersInfoService.updateCustPay(oci);
+		if(FLAG){
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		}else{
+			inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
+		}
+		System.out.println("====== Action: updateCustPay() Done ======");
+		return "update_done";
+	}
+	/**
+     * http://localhost:8080/omSSH/custInfo-updateCustContactors
+     * MethodName: updateCustContactors
+     * Description: 更新客户联系人信息
+     * @author mclin
+	 * @throws UnsupportedEncodingException 
+     */
+	public String updateCustContactors() throws UnsupportedEncodingException{
+		System.out.println("====== Action: updateCustContactors()... ======");
+		OmCustomersInfo oci = new OmCustomersInfo();
+		oci.setCustId(custId);
+		OmCustContactors occ = new OmCustContactors();
+		occ.setOmCustomersInfo(oci);
+		occ.setInvPklistMailto(invPklistMailto);
+		occ.setMailFrom(mailFrom);
+		occ.setOcPiMailto(ocPiMailto);
+		occ.setPoMailto(poMailto);
+		occ.setPrePoMailto(prePoMailto);
+		boolean FLAG = custContactorsService.updateCustContactors(occ);
+		if(FLAG){
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		}else{
+			inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
+		}
+		System.out.println("====== Action: updateCustContactors Done ======");
+		return "update_done";
 	}
 	/**
 	 * getter and setter方法
