@@ -724,7 +724,6 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 							for (int j = 0; j < pc.size(); j++) {
 						%>
 						<tr>
-<%-- 						    <input type="hidden" value="${custId}" name="custId" /> --%>
 						    <input type="hidden" value="<%=pc.get(j).getPlcId()%>" name="plcid" />
 							<th><input value="<%=pc.get(j).getDisplayName()%>" name="dname" /></th>
 							<th><input value="<%=pc.get(j).getExcelCol()%>" name="excel" /></th>

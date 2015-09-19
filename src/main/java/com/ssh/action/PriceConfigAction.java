@@ -62,7 +62,7 @@ public class PriceConfigAction {
 //				System.out.println("--"+name[j]+"--");
 //				System.out.println("--"+exc[j]+"--");
 				opc.setDisplayName(name[j].trim());
-				opc.setPriceListCol(String.valueOf(j+4));
+				opc.setPriceListCol(String.valueOf(j+3));
 				opc.setExcelCol(exc[j].trim());
 				opc.setActivity(atv[j].trim());
 				pcService.insert(opc);
