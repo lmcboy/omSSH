@@ -27,7 +27,7 @@ function getJson(){
 		success:function(data){
 			var html ='<table class="table table-striped table-bordered table-hover"><thead><tr><td>序号</td><td>折扣名称</td><td>客户代码</td><td>折扣金额</td><td>已用金额</td><td>折扣余额</td><td>有效</td><td>操作</td><td>记录</td></tr></thead><tbody>';
 			$.each(data,function(entryIndex,entry){
-				html +='<tr><td>'+entry.sd_id+'</td>'+'<td>'+entry.discount_name+'</td>'+'<td>'+entry.cust_code+'</td>'+'<td>'+entry.amount+'</td>'+'<td>'+entry.applied_amount+'</td>'+'<td>'+entry.balance+'</td>'+'<td>'+entry.activity+'</td>'+'<td><a href="special-specialFindById?discount_id='+entry.sd_id+'">编制</a></td><td><a href="appliedRecord-findByName?discount_name='+entry.discount_name+'">编制</a></td></tr>';
+				html +='<tr><td>'+entry.sd_id+'</td>'+'<td>'+entry.discount_name+'</td>'+'<td>'+entry.cust_code+'</td>'+'<td>'+entry.amount+'</td>'+'<td>'+entry.applied_amount+'</td>'+'<td>'+entry.balance+'</td>'+'<td>'+entry.activity+'</td>'+'<td><a href="special-specialFindById?discount_id='+entry.sd_id+'">编制</a></td><td><a href="appliedRecord-findByName?discount_name='+entry.discount_name+'">查看</a></td></tr>';
 			});
 			html+='</tbody></table>';
 			$("#u142").html(html);
