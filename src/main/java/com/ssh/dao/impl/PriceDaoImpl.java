@@ -37,7 +37,6 @@ public class PriceDaoImpl implements PriceDao {
 			if (tx!=null) tx.rollback();
 			e.printStackTrace(); 
 		}finally {
-
 			session.close();
 		}
 		return 0;
