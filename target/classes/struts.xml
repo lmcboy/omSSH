@@ -26,10 +26,18 @@
     <constant name="struts.tag.altSyntax" value="true" />
     <!-- 对于WebLogic,Orion,OC4J此属性应该设置成true -->
     <constant name="struts.dispatcher.parametersWorkaround" value="false" />
-
+    
     <package name="basePackage" extends="struts-default">
+         <interceptors>
+            <interceptor name="encodeing" class="com.ssh.servlet.EncodingInterceptor"></interceptor>
+            <interceptor-stack name="Encodeing">
+               <interceptor-ref name="encodeing"></interceptor-ref>
+               <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+         </interceptors>         
     	<action name="om-*" class="com.ssh.action.TestAction" method="{1}">
     	</action>
+<<<<<<< HEAD
     	<action name="custInfo-*" class="com.ssh.action.CustomersInfoAction" method="{1}">
     		<result name="select_all">/select_cust.jsp</result>
     		<result name="add_success">/new_cust.jsp</result>
@@ -46,6 +54,19 @@
 		        <param name="contentType">text/html</param>
 		        <param name="inputName">inputStream</param>
 		    </result>
+=======
+    	<action name="discount-*" class="com.ssh.action.normalDiscountAction" method="{1}">     	    	
+    	  <result name="list">/normalDiscount_update.jsp</result>
+    	  <result name="addlist">/normalDiscount_findAll.jsp</result>
+    	</action>
+    	<action name="special-*" class="com.ssh.action.specialDiscountAction" method="{1}">    	  
+    	  <result name="getById">/specialDiscount_update.jsp</result>
+    	  <result name="success">/specialDiscount.jsp</result>
+    	</action>
+    	<action name="appliedRecord-*" class="com.ssh.action.specialDiscountAppliedRecordsAction" method="{1}">
+    	       <!-- <interceptor-ref name="Encodeing"></interceptor-ref>  -->   	      
+               <result name="success">/specialDiscountAppliedRecords.jsp</result>   	   
+>>>>>>> hzy
     	</action>
     </package>
 

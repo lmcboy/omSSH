@@ -41,12 +41,13 @@
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-    </filter>
+    </filter>     
     <!-- Struts2过滤器拦截所有的.action请求 -->
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    
     
     <!-- druid监控页面，使用${pageContext.request.contextPath}/druid/index.html访问 -->
     <servlet>
