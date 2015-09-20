@@ -18,7 +18,7 @@ public class PriceAction {
 	
 	public String getHead(){
 		int custId =priceService.getCustid(code); 
-		System.out.println(custId+"-------");
+//		System.out.println(custId+"-------");
 		List head_col =priceService.getHead(custId);
 		String[] head =new String[head_col.size()/2];
 		int[] plc =new int[head_col.size()/2];
@@ -26,7 +26,7 @@ public class PriceAction {
 		for (int i = 0; i < (head_col.size()/2); i++) {
 			head[i]=(String) head_col.get(i);
 			plc[i]=(Integer) head_col.get(head_col.size()/2+i);
-			System.out.println(plc[i]+"-----------");
+//			System.out.println(plc[i]+"-----------");
 		}
 		session.put("head", head);
 		List data = new ArrayList();

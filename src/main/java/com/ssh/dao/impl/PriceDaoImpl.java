@@ -136,7 +136,7 @@ public class PriceDaoImpl implements PriceDao {
 			int j=0;
 			for (Iterator iterator = pl.iterator(); iterator.hasNext();){
 					cpl[j]= iterator.next().toString();
-				System.out.println(cpl[j]);
+//				System.out.println(cpl[j]);
 				j++;
 			}
 			System.out.println(cpl.length);
