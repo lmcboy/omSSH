@@ -151,7 +151,7 @@ public final class om_005fprice_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("            <div id=\"u7\" class=\"\" selectiongroup=\"u5_tree_group\">\r\n");
       out.write("              <img id=\"u7_img\" class=\"img \" src=\"resources/images/transparent.gif\"/>\r\n");
       out.write("              <!-- Unnamed () -->\r\n");
-      out.write("              <div id=\"u8\" class=\"text\">\r\n");
+      out.write("              <div id=\"u8\" class=\"text\" onclick=\"location='index.jsp'\">\r\n");
       out.write("                <p><span>首页</span></p>\r\n");
       out.write("              </div>\r\n");
       out.write("            </div>\r\n");

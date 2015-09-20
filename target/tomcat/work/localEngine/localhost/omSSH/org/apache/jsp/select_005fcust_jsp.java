@@ -144,7 +144,7 @@ public final class select_005fcust_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            <div id=\"u7\" class=\"\" selectiongroup=\"u5_tree_group\">\r\n");
       out.write("              <img id=\"u7_img\" class=\"img \" src=\"resources/images/transparent.gif\"/>\r\n");
       out.write("              <!-- Unnamed () -->\r\n");
-      out.write("              <div id=\"u8\" class=\"text\">\r\n");
+      out.write("              <div id=\"u8\" class=\"text\" onclick=\"location='index.jsp'\">\r\n");
       out.write("                <p><span>首页</span></p>\r\n");
       out.write("              </div>\r\n");
       out.write("            </div>\r\n");
@@ -377,7 +377,7 @@ public final class select_005fcust_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <div id=\"u62\" class=\"\" selectiongroup=\"u5_tree_group\">\r\n");
       out.write("                  <img id=\"u62_img\" class=\"img \" src=\"images/custManage/u62.png\"/>\r\n");
       out.write("                  <!-- Unnamed () -->\r\n");
-      out.write("                  <div id=\"u63\" class=\"text\">\r\n");
+      out.write("                  <div id=\"u63\" class=\"text\" onclick=\"location='select_cust.jsp'\">\r\n");
       out.write("                    <p><span>客户</span><span>管理</span></p>\r\n");
       out.write("                  </div>\r\n");
       out.write("                </div>\r\n");
@@ -620,7 +620,7 @@ public final class select_005fcust_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("      </div>\r\n");
       out.write("      <!-- Unnamed (HTML Button) -->\r\n");
       out.write("      <div id=\"u126\" class=\"ax_html_button\">\r\n");
-      out.write("        <input id=\"u126_input\" type=\"button\" onclick=\"location='new_cust.jsp'\"\" value=\"新建\"/>\r\n");
+      out.write("        <input id=\"u126_input\" type=\"button\" onclick=\"location='new_cust.jsp'\" value=\"新建\"/>\r\n");
       out.write("      </div>\r\n");
       out.write("\t</form>\r\n");
       out.write("      <!-- Unnamed (Shape) -->\r\n");

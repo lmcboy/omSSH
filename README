@@ -1,0 +1,11 @@
+执行以下命令：
+
+mvn clean
+mvn compile
+mvn tomcat:run
+
+访问：http://localhost:8080/omSSH
+
+所用数据库：MySQL，用户名：root，密码：lin2011520
+
+数据库脚本语言以及ER图都在项目的database文件夹下面。

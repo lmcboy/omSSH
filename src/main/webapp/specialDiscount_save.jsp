@@ -97,7 +97,7 @@
 						<img id="u7_img" class="img "
 							src="resources/images/transparent.gif" />
 						<!-- Unnamed () -->
-						<div id="u8" class="text">
+						<div id="u8" class="text" onclick="location='index.jsp'">
 							<p>
 								<span>首页</span>
 							</p>
