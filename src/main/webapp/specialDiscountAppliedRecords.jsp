@@ -15,7 +15,7 @@
 <link href="resources/css/axure_rp_page.css" type="text/css"
 	rel="stylesheet" />
 <link href="data/styles.css" type="text/css" rel="stylesheet" />
-<link href="files/XXX/styles.css" type="text/css" rel="stylesheet" />
+<link href="files/oncenew/styles.css" type="text/css" rel="stylesheet" />
 <script src="resources/scripts/jquery-1.7.1.min.js"></script>
 <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
 <script src="resources/scripts/axure/axQuery.js"></script>
@@ -44,7 +44,7 @@
 <script src="resources/scripts/axure/adaptive.js"></script>
 <script src="resources/scripts/axure/tree.js"></script>
 <script src="resources/scripts/axure/init.temp.js"></script>
-<script src="files/XXX/data.js"></script>
+<script src="files/oncenew/data.js"></script>
 <script src="resources/scripts/axure/legacy.js"></script>
 <script src="resources/scripts/axure/viewer.js"></script>
 <script src="js/getAjax.js"></script>
