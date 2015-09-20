@@ -37,7 +37,6 @@
          </interceptors>         
     	<action name="om-*" class="com.ssh.action.TestAction" method="{1}">
     	</action>
-<<<<<<< HEAD
     	<action name="custInfo-*" class="com.ssh.action.CustomersInfoAction" method="{1}">
     		<result name="select_all">/select_cust.jsp</result>
     		<result name="add_success">/new_cust.jsp</result>
@@ -54,7 +53,7 @@
 		        <param name="contentType">text/html</param>
 		        <param name="inputName">inputStream</param>
 		    </result>
-=======
+		</action>
     	<action name="discount-*" class="com.ssh.action.normalDiscountAction" method="{1}">     	    	
     	  <result name="list">/normalDiscount_update.jsp</result>
     	  <result name="addlist">/normalDiscount_findAll.jsp</result>
@@ -66,8 +65,15 @@
     	<action name="appliedRecord-*" class="com.ssh.action.specialDiscountAppliedRecordsAction" method="{1}">
     	       <!-- <interceptor-ref name="Encodeing"></interceptor-ref>  -->   	      
                <result name="success">/specialDiscountAppliedRecords.jsp</result>   	   
->>>>>>> hzy
     	</action>
     </package>
+
+	<package name="pricePackage" extends="struts-default">
+		<action name="*_*" class="com.ssh.action.{1}Action" method="{2}">
+			<result name="success">/om_price_config.jsp</result>
+			<result name="success2">/om_price.jsp</result>
+		</action>
+	</package>
+    
 
 </struts>

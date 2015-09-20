@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\ssh\service\IUserService.class
 com\ssh\servlet\EncodingInterceptor.class
 com\ssh\model\OmCustPriceList.class
@@ -28,3 +29,28 @@ com\ssh\service\impl\specialDiscountAppliedRecordsServiceImpl.class
 com\ssh\dao\impl\UserDaoImpl.class
 com\ssh\service\specialDiscountAppliedRecordsService.class
 com\ssh\service\impl\normalDiscountServiceImpl.class
+=======
+com\ssh\service\impl\PriceConfigServiceImpl.class
+com\ssh\service\IUserService.class
+com\ssh\action\PriceAction.class
+com\ssh\model\OmCustPriceList.class
+com\ssh\model\User.class
+com\ssh\dao\PriceDao.class
+com\ssh\model\OmNormalDiscount.class
+com\ssh\model\OmSpecialDiscount.class
+com\ssh\dao\PriceConfigDao.class
+com\ssh\model\OmCustContactors.class
+com\ssh\service\impl\PriceServiceImpl.class
+com\ssh\service\PriceConfigService.class
+com\ssh\model\OmCustDiscount.class
+com\ssh\dao\impl\PriceDaoImpl.class
+com\ssh\model\OmCustPriceListConfig.class
+com\ssh\model\OmSpecialDiscountAppliedRecords.class
+com\ssh\model\OmCustomersInfo.class
+com\ssh\service\impl\UserServiceImpl.class
+com\ssh\service\PriceService.class
+com\ssh\action\PriceConfigAction.class
+com\ssh\dao\IUserDao.class
+com\ssh\dao\impl\UserDaoImpl.class
+com\ssh\dao\impl\PriceConfigDaoImpl.class
+>>>>>>> lsm

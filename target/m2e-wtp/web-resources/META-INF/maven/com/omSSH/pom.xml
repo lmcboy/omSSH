@@ -91,7 +91,6 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 		</dependency>
-<<<<<<< HEAD
 <!-- hibernate4 -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -122,68 +121,21 @@
 			<artifactId>gson</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-=======
-		<!-- hibernate4 -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>4.1.7.Final</version>
-		</dependency>
-		<!-- mysql驱动包 -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.34</version>
-		</dependency>
-		<!--Druid连接池包 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>1.0.12</version>
-		</dependency>
-		<!--aspectjweaver包 -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.5</version>
-		</dependency>
-
->>>>>>> hzy
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>3.0-alpha-1</version>
-<<<<<<< HEAD
 			<scope>provided</scope>			
 		</dependency>
   </dependencies>
   <properties>
   		<!-- 文件拷贝时的编码 -->
-=======
-			<scope>provided</scope>
-		</dependency>
-
-
-	</dependencies>
-
-	<properties>
-		<!-- 文件拷贝时的编码 -->
->>>>>>> hzy
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<!-- 编译时的编码 -->
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-<<<<<<< HEAD
   </properties>
   <build>
     <finalName>omSSH</finalName>
   </build>
-=======
-
-	</properties>
-
-	<build>
-		<finalName>omSSH</finalName>
-	</build>
->>>>>>> hzy
 </project>

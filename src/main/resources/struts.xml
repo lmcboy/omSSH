@@ -68,4 +68,12 @@
     	</action>
     </package>
 
+	<package name="pricePackage" extends="struts-default">
+		<action name="*_*" class="com.ssh.action.{1}Action" method="{2}">
+			<result name="success">/om_price_config.jsp</result>
+			<result name="success2">/om_price.jsp</result>
+		</action>
+	</package>
+    
+
 </struts>
