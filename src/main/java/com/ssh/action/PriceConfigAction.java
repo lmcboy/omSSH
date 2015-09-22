@@ -1,5 +1,6 @@
 package com.ssh.action;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +56,7 @@ public class PriceConfigAction {
 		OmCustomersInfo oc = pcService.getCustomer(custid);
 		opc.setOmCustomersInfo(oc);
 		for(int i=0;i<pclen;i++){
+			System.out.println(name[i]);
 			pcService.update(Integer.parseInt(pcid[i].trim()),name[i].trim(),exc[i].trim(),atv[i].trim());
 		}
 		for(int j=pclen;j<name.length;j++){
@@ -75,8 +77,6 @@ public class PriceConfigAction {
 		session.put("pc",pc);
 		return "success";
 	}
-
-	
 	
 	
 	

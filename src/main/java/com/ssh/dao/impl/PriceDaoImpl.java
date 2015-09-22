@@ -13,7 +13,9 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.ssh.dao.PriceDao;
+import com.ssh.model.OmCustPriceList;
 import com.ssh.model.OmCustPriceListConfig;
+import com.ssh.model.OmCustomersInfo;
 
 @Repository("priceDao")
 public class PriceDaoImpl implements PriceDao {
@@ -138,7 +140,7 @@ public class PriceDaoImpl implements PriceDao {
 //				System.out.println(cpl[j]);
 				j++;
 			}
-			System.out.println(cpl.length);
+//			System.out.println(cpl.length);
 			return cpl;
 		}catch (HibernateException e) {
 			if (tx!=null) tx.rollback();
@@ -150,5 +152,74 @@ public class PriceDaoImpl implements PriceDao {
 		return null;
 		
 	}
+	
+	
+	public String[] getDnameBy(int id){
+		Session session = sessionFactory.openSession();
+		String hql = "select displayName from OmCustPriceListConfig where omCustomersInfo.custId=:id order by plcId";
+		Transaction tx = null; 
+		try{
+			tx = session.beginTransaction();
+			Query query = session.createQuery(hql);
+			query.setParameter("id", id);
+			List oci = query.list();
+			String[] dname=new String[oci.size()];
+			int i=0;
+			for (Iterator iterator = oci.iterator(); iterator.hasNext();){
+				dname[i]=(String) iterator.next();
+				i++;
+				}
+			
+			return dname;
+		}catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}finally {
+
+			session.close();
+		}
+		return null;
+		
+	}
+	
+	public OmCustomersInfo getCustomer(int id){
+		Session session = sessionFactory.openSession();
+		Transaction tx = null; 
+		try{
+			tx = session.beginTransaction();
+			OmCustomersInfo customer =(OmCustomersInfo) session.get(OmCustomersInfo.class, id);
+			return customer;
+		}catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}finally {
+
+			session.close();
+		}
+		return null;
+		
+	}
+	
+	public void add(OmCustPriceList opl){
+		Session session = sessionFactory.openSession();
+		Transaction tx = null; 
+		try{
+			tx = session.beginTransaction();
+			session.save(opl);
+			tx.commit();
+			System.out.println("---------add success--------");
+		}catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}finally {
+
+			session.close();
+		}
+	}
+	
+	
+	
+	
+	
 
 }

@@ -12,3 +12,20 @@
   top:440px;
   width:400px;
 }
+
+#showdata {
+	position: absolute;
+	left: 270px;
+	top: 389px;
+	width: 800px;
+	height: 400px;
+}
+
+#addprice
+{
+	position: absolute;
+	left: 270px;
+	top: 389px;
+	width: 800px;
+	height: 400px;
+}

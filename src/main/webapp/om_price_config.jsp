@@ -83,7 +83,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 		<!-- Unnamed (Image) -->
 		<div id="u4" class="ax_image">
-			<img id="u4_img" class="img " src="images/登录/u2.png" />
+			<img id="u4_img" class="img " src="images/login/u2.png" />
 			<!-- Unnamed () -->
 			<div id="u5" class="text">
 				<p>
@@ -98,7 +98,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 				src="resources/images/transparent.gif" alt="u6_start" /> <img
 				id="u6_end" class="img " src="resources/images/transparent.gif"
 				alt="u6_end" /> <img id="u6_line" class="img "
-				src="images/登录/u4_line.png" alt="u6_line" />
+				src="images/login/u4_line.png" alt="u6_line" />
 		</div>
 
 		<!-- Unnamed (Tree) -->
@@ -125,7 +125,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u12" class="ax_image">
-						<img id="u12_img" class="img " src="images/登录/u10.png" />
+						<img id="u12_img" class="img " src="images/login/u10.png" />
 						<!-- Unnamed () -->
 						<div id="u13" class="text">
 							<p>
@@ -199,7 +199,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u26" class="ax_image">
-						<img id="u26_img" class="img " src="images/登录/u10.png" />
+						<img id="u26_img" class="img " src="images/login/u10.png" />
 						<!-- Unnamed () -->
 						<div id="u27" class="text">
 							<p>
@@ -258,7 +258,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u37" class="ax_image">
-						<img id="u37_img" class="img " src="images/登录/u10.png" />
+						<img id="u37_img" class="img " src="images/login/u10.png" />
 						<!-- Unnamed () -->
 						<div id="u38" class="text">
 							<p>
@@ -302,7 +302,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u45" class="ax_image">
-						<img id="u45_img" class="img " src="images/登录/u10.png" />
+						<img id="u45_img" class="img " src="images/login/u10.png" />
 						<!-- Unnamed () -->
 						<div id="u46" class="text">
 							<p>
@@ -376,7 +376,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u59" class="ax_image">
-						<img id="u59_img" class="img " src="images/登录/u10.png" />
+						<img id="u59_img" class="img " src="images/login/u10.png" />
 						<!-- Unnamed () -->
 						<div id="u60" class="text">
 							<p>
@@ -417,7 +417,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 						<div id="u66" class="ax_tree_node treenode">
 							<!-- Unnamed (Shape) -->
 							<div id="u67" class="" selectiongroup="u7_tree_group">
-								<img id="u67_img" class="img " src="images/价格表配置查询_编辑/u67.png" />
+								<img id="u67_img" class="img " src="images/priceconfig/u67.png" />
 								<!-- Unnamed () -->
 								<div id="u68" class="text">
 									<p>
@@ -434,7 +434,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u70" class="ax_image">
-						<img id="u70_img" class="img " src="images/登录/u10_selected.png" />
+						<img id="u70_img" class="img " src="images/login/u10_selected.png" />
 						<!-- Unnamed () -->
 						<div id="u71" class="text">
 							<p>
@@ -459,7 +459,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 						<div id="u74" class="ax_tree_node treenode">
 							<!-- Unnamed (Shape) -->
 							<div id="u75" class="" selectiongroup="u7_tree_group">
-								<img id="u75_img" class="img " src="images/价格表配置查询_编辑/u75.png" />
+								<img id="u75_img" class="img " src="images/priceconfig/u75.png" />
 								<!-- Unnamed () -->
 								<div id="u76" class="text">
 									<p>
@@ -488,7 +488,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 						<div id="u80" class="ax_tree_node treenode">
 							<!-- Unnamed (Shape) -->
 							<div id="u81" class="" selectiongroup="u7_tree_group">
-								<img id="u81_img" class="img " src="images/价格表配置查询_编辑/u81.png" />
+								<img id="u81_img" class="img " src="images/priceconfig/u81.png" />
 								<!-- Unnamed () -->
 								<div id="u82" class="text">
 									<p>
@@ -505,7 +505,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u84" class="ax_image">
-						<img id="u84_img" class="img " src="images/登录/u10.png" />
+						<img id="u84_img" class="img " src="images/login/u10.png" />
 						<!-- Unnamed () -->
 						<div id="u85" class="text">
 							<p>
@@ -549,7 +549,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 
 					<!-- Unnamed (Image) -->
 					<div id="u92" class="ax_image">
-						<img id="u92_img" class="img " src="images/登录/u10.png" />
+						<img id="u92_img" class="img " src="images/login/u10.png" />
 						<!-- Unnamed () -->
 						<div id="u93" class="text">
 							<p>
@@ -651,7 +651,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 				src="resources/images/transparent.gif" alt="u110_start" /> <img
 				id="u110_end" class="img " src="resources/images/transparent.gif"
 				alt="u110_end" /> <img id="u110_line" class="img "
-				src="images/登录/u104_line.png" alt="u110_line" />
+				src="images/login/u104_line.png" alt="u110_line" />
 		</div>
 
 		<!-- Unnamed (Shape) -->
@@ -710,7 +710,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 				</table>
 			</div>
 		</div>
-		<form action="PriceConfig_updateAdd">
+		<form action="PriceConfig_updateAdd" method="post" >
 		<div id="my118" class="ax_table">
 			<div class="row">
 				<table class="table table-bordered table-striped table-hover" >
@@ -771,7 +771,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 				src="resources/images/transparent.gif" alt="u213_start" /> <img
 				id="u213_end" class="img " src="resources/images/transparent.gif"
 				alt="u213_end" /> <img id="u213_line" class="img "
-				src="images/登录/u105_line.png" alt="u213_line" />
+				src="images/login/u105_line.png" alt="u213_line" />
 		</div>
 
 
@@ -781,7 +781,7 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 				src="resources/images/transparent.gif" alt="u225_start" /> <img
 				id="u225_end" class="img " src="resources/images/transparent.gif"
 				alt="u225_end" /> <img id="u225_line" class="img "
-				src="images/订单导入/u136_line.png" alt="u225_line" />
+				src="images/dingdanin/u136_line.png" alt="u225_line" />
 		</div>
 
 
@@ -797,7 +797,6 @@ pc=(List<OmCustPriceListConfig>)session.getAttribute("pc");
 	$(document).ready(function() {
 		$("#u215_input").click(function() {
 			var result = [];
-			alert("");
 			$("input[type='checkbox']").each(function() {
 				var num = this.checked ? 1 : 0;
 				result.push(num);

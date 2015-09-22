@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssh.dao.PriceDao;
+import com.ssh.model.OmCustPriceList;
+import com.ssh.model.OmCustomersInfo;
 import com.ssh.service.PriceService;
 
 //使用Spring提供的@Service注解将PriceConfigServiceImpl标注为一个Service
@@ -32,6 +34,19 @@ public class PriceServiceImpl implements PriceService {
 
 	public String[] getDataByName(String name, int id) {
 		return priceDao.getDataByName(name, id);
+	}
+
+	public String[] getDnameBy(int id) {
+		return priceDao.getDnameBy(id);
+	}
+
+	public OmCustomersInfo getCustomer(int id) {
+		return priceDao.getCustomer(id);
+	}
+
+	public void add(OmCustPriceList opl) {
+		priceDao.add(opl);
+		
 	} 
     
     
